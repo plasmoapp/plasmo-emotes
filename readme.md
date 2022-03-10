@@ -6,7 +6,7 @@
   <div>
     <a href="https://github.com/plasmoapp/plasmo-emotes/">GitHub</a>
     <span> | </span>
-    <a href="">Spigot</a>
+    <a href="https://www.spigotmc.org/resources/plasmo-emotes.100598/">Spigot</a>
     <span> | </span>
     <a href="https://discord.com/invite/uueEqzwCJJ">Discord</a>
   </div>
