@@ -1,3 +1,5 @@
+[![](http://img.shields.io/discord/833693644501286993?label=Discord&style=flat&logo=discord)](https://discord.gg/uueEqzwCJJ)
+
 ![](https://i.imgur.com/yRmcrIH.png)
 
 <div>
@@ -22,7 +24,7 @@ Components are replaced when the message is received. Old messages have these we
 
 You also need to have a plugin installed on the server if you want it to work. It replaces text with symbols.
 
-May not work with some chat plugins. You can fix this with Plasmo Emotes API: 
+May not work with some chat plugins. You can fix this with [Plasmo Emotes API](https://github.com/plasmoapp/plasmo-emotes/blob/main/API.md).
 
 ## How to use
 
@@ -33,3 +35,5 @@ May not work with some chat plugins. You can fix this with Plasmo Emotes API:
 5. There is now `emotes.zip` in the plugin folder. Share this resource pack among the players, set it as your default server pack, or merge it with your other resource pack. It's optional, so you can do whatever you want with it. 
 
 ## bStats
+
+[![](https://bstats.org/signatures/bukkit/plasmo%20emotes.svg)](https://bstats.org/plugin/bukkit/Plasmo%20Emotes/14583)
