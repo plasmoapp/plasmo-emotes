@@ -1,0 +1,5 @@
+name: PlasmoEmotes
+version: '${project.version}'
+main: su.plo.emotes.Emotes
+api-version: 1.18
+authors: [ Apehum ]

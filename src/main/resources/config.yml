@@ -1,0 +1,4 @@
+# Replace text with emotes when the chat message is sent
+enable-chat-handler: true
+# Generate emotes.zip archive when initializing the plugin
+generate-pack: true
