@@ -2,10 +2,10 @@ package su.plo.emotes;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextReplacementConfig;
-import su.plo.emotes.api.Emote;
 import su.plo.emotes.api.EmoteManager;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class EmoteReplacer {
     private final TextReplacementConfig replacementConfig;
@@ -18,7 +18,7 @@ public class EmoteReplacer {
 
         List<String> list = emotes.getAll()
                 .stream()
-                .map(Emote::name)
+                .map(emote -> Pattern.quote(emote.name()))
                 .toList();
 
         this.replacementConfig = TextReplacementConfig.builder()
