@@ -6,7 +6,7 @@
 
     <groupId>su.plo</groupId>
     <artifactId>emotes</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>Plasmo Emotes</name>
@@ -62,6 +62,10 @@
 
     <repositories>
         <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+        <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
@@ -79,6 +83,12 @@
     </distributionManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.8.0</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>

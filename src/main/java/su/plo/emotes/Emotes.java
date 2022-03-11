@@ -1,5 +1,7 @@
 package su.plo.emotes;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import com.google.common.reflect.TypeToken;
@@ -17,6 +19,8 @@ import su.plo.emotes.api.EmotesAPI;
 import su.plo.emotes.commands.EmotesCommand;
 import su.plo.emotes.data.Font;
 import su.plo.emotes.data.FontProvider;
+import su.plo.emotes.listeners.ChatListener;
+import su.plo.emotes.listeners.ProtoChatListener;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -37,6 +41,8 @@ public final class Emotes extends JavaPlugin implements EmotesAPI {
 
     private final Gson gson = new Gson();
     private final EmoteManager manager = new EmoteManagerImpl();
+
+    public ProtocolManager protocolManager;
     private EmoteReplacer replacer;
 
     @Override
@@ -55,11 +61,20 @@ public final class Emotes extends JavaPlugin implements EmotesAPI {
 
     @Override
     public void onDisable() {
+        if (protocolManager != null) {
+            protocolManager.removePacketListeners(this);
+        }
     }
 
     private void registerListeners() {
         if (getConfig().getBoolean("enable-chat-handler")) {
-            getServer().getPluginManager().registerEvents(new ChatListener(this), this);
+            if (getConfig().getBoolean("use-protocol-lib") &&
+                    getServer().getPluginManager().getPlugin("ProtocolLib") != null) {
+                protocolManager = ProtocolLibrary.getProtocolManager();
+                new ProtoChatListener(this).listen();
+            } else {
+                getServer().getPluginManager().registerEvents(new ChatListener(this), this);
+            }
         }
     }
 

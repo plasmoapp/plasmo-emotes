@@ -2,3 +2,5 @@
 enable-chat-handler: true
 # Generate emotes.zip archive when initializing the plugin
 generate-pack: true
+# Set this to false if you are using chat plugin that support new API (AsyncChatEvent instead of deprecated AsyncPlayerChatEvent)
+use-protocol-lib: true
